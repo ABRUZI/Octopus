@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Configuration>
+	<property>
+		<name>octopus.common.zookeeper</name>
+		<value>10.104.90.46:2181,10.104.90.47:2181,10.104.90.48:2181</value>
+		<description>zk的地址</description>
+	</property>
+	<property>
+		<name>octopus.common.slaver.remotelistener.port</name>
+		<value>5678</value>
+		<description>slaver远程操作的端口</description>
+	</property>
+	<property>
+		<name>octopus.common.master.remotelistener.port</name>
+		<value>1122</value>
+		<description>master远程操作的端口</description>
+	</property>
+</Configuration>

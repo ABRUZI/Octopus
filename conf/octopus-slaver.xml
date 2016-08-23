@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Configuration>
+	<property>
+		<name>octopus.slaver.locallistener.port</name>
+		<value>1234</value>
+		<description>slaver 本地命令行端口</description>
+	</property>	
+	<property>
+		<name>octopus.slaver.userlib.path</name>
+		<value>E:/temp/jars</value>
+		<description>用户jar包存放的位置，包括用户自己的代码打的jar和这些jar依赖的jar</description>
+	</property>
+</Configuration>

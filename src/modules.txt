@@ -1,0 +1,7 @@
+
+octopus 由四个子项目组成
+
+基础工程  : https://github.com/ABRUZI/octopus-base
+控制台工程：https://github.com/ABRUZI/octopus-webconsole
+master工程：https://github.com/ABRUZI/octopus-master
+slaver工程：https://github.com/ABRUZI/octopus-slaver

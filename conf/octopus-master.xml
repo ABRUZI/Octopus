@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Configuration>
+	<property>
+		<name>octopus.master.locallistener.port</name>
+		<value>7890</value>
+		<description>master本地命令行端口</description>
+	</property>	
+</Configuration>
