@@ -3,7 +3,7 @@
 #*    说明: 此文件为octopus的命令脚本，负责octopus的master与slaver实例的启动停止等维护操作        *
 #*          执行方式   sh octopus action[start|stop|evict|active] node[master|slaver]             *
 #*          action参数的意义分别是：                                                              *
-#*		start:启动 stop:停止 evict:将当前节点从zk中移除 active:讲当前节点注册到zk中       *
+#*          start:启动 stop:停止 evict:将当前节点从zk中移除 active:讲当前节点注册到zk中           *
 #**************************************************************************************************
 function printHelp(){
     echo  "Usage: octopus action node"
