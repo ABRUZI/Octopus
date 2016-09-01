@@ -3,7 +3,7 @@
 #*    说明: 此文件为octopus的命令脚本，负责octopus的master与slaver实例的启动停止等维护操作        *
 #*          执行方式   sh octopus action[start|stop|evict|active] node[master|slaver]             *
 #*          action参数的意义分别是：                                                              *
-#*          start:启动 stop:停止 evict:将当前节点从zk中移除 active:讲当前节点注册到zk中           *
+#*              start:启动 stop:停止 evict:将当前节点从zk中移除 active:讲当前节点注册到zk中       *
 #**************************************************************************************************
 function printHelp(){
     echo  "Usage: octopus action node"
@@ -27,6 +27,7 @@ NODE_SLAVER="slaver"
 if [[ "$OCTOPUS_HOME" = "" ]] 
 then
 	OCTOPUS_HOME=$(cd ../;pwd)
+	export OCTOPUS_HOME
 fi
 
 
@@ -44,10 +45,10 @@ if [[ "${action}" = "${ACTION_START}" ]]
 then
 	if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then 
-		echo "start master"
+		nohup java -jar ../share/master/octopus-master-0.0.1-SNAPSHOT.jar &
 	elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-		echo "start slaver"
+		nohup java -jar ../share/slaver/octopus-slaver-0.0.1.SNAPSHOT.jar &
 	else
 		echo "UNKNOWN node name"
 		printHelp
@@ -56,10 +57,10 @@ elif [[ "${action}" = "${ACTION_STOP}" ]]
 	then 
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-                echo "stop master"
+                java -classpath ../share/master/*.jar:../share/master/lib/*.jar #todo  shutdown
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                echo "stop slaver"
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  shutdown
         else
                 echo "UNKNOWN node name"
                 printHelp
@@ -68,10 +69,10 @@ elif [[ "${action}" = "${ACTION_EVICT}" ]]
 then
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-                echo "evict master"
+		java -classpath ../share/master/*.jar:../share/master/lib/*.jar #todo  evict
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                echo "evict slaver"
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  evict
         else
                 echo "UNKNOWN node name"
                 printHelp
@@ -80,10 +81,10 @@ elif [[ "${action}" = "${ACTION_ACTIVE}" ]]
 then
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-                echo "active master"
+                java -classpath ../share/master/*.jar:../share/slaver/lib/*.jar #todo  active
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                echo "active slaver"
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  active
         else
                 echo "UNKNOWN node name"
                 printHelp
