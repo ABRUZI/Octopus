@@ -57,10 +57,10 @@ elif [[ "${action}" = "${ACTION_STOP}" ]]
 	then 
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-                java -classpath ../share/master/*.jar:../share/master/lib/*.jar #todo  shutdown
+                java -classpath ../share/master/*.jar:../share/master/lib/*.jar org.rhino.octopus.master.local.LocalCommand shutdown
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  shutdown
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar org.rhino.octopus.slaver.local.LocalCommand shutdown
         else
                 echo "UNKNOWN node name"
                 printHelp
@@ -69,10 +69,10 @@ elif [[ "${action}" = "${ACTION_EVICT}" ]]
 then
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-		java -classpath ../share/master/*.jar:../share/master/lib/*.jar #todo  evict
+		java -classpath ../share/master/*.jar:../share/master/lib/*.jar org.rhino.octopus.master.local.LocalCommand  evict
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  evict
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar org.rhino.octopus.slaver.local.LocalCommand  evict
         else
                 echo "UNKNOWN node name"
                 printHelp
@@ -81,10 +81,10 @@ elif [[ "${action}" = "${ACTION_ACTIVE}" ]]
 then
         if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then
-                java -classpath ../share/master/*.jar:../share/slaver/lib/*.jar #todo  active
+                java -classpath ../share/master/*.jar:../share/slaver/lib/*.jar org.rhino.octopus.master.local.LocalCommand  active
         elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar #todo  active
+                java -classpath ../share/slaver/*.jar:../share/slaver/lib/*.jar org.rhino.octopus.slaver.local.LocalCommand  active
         else
                 echo "UNKNOWN node name"
                 printHelp
