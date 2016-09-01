@@ -45,10 +45,10 @@ if [[ "${action}" = "${ACTION_START}" ]]
 then
 	if [[ "${node}" = "${NODE_MASTER}" ]] 
 	then 
-		nohup java -jar ../share/master/octopus-master-0.0.1-SNAPSHOT.jar &
+		nohup java -jar ../share/master/*.jar &
 	elif [[ "${node}" = "${NODE_SLAVER}" ]] 
 	then
-		nohup java -jar ../share/slaver/octopus-slaver-0.0.1.SNAPSHOT.jar &
+		nohup java -jar ../share/slaver/*.jar &
 	else
 		echo "UNKNOWN node name"
 		printHelp
