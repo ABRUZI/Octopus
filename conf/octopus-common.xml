@@ -15,4 +15,85 @@
 		<value>1122</value>
 		<description>master远程操作的端口</description>
 	</property>
+	<property>
+		<name>octopus.common.db.addr</name>
+		<value>127.0.0.1</value>
+		<description>数据库IP</description>
+	</property>
+	<property>
+		<name>octopus.common.db.port</name>
+		<value>3306</value>
+		<description>数据库端口号</description>
+	</property>
+	<property>
+		<name>octopus.common.db.user</name>
+		<value>root</value>
+		<description>数据库用户名</description>
+	</property>
+	<property>
+		<name>octopus.common.db.password</name>
+		<value>123456</value>
+		<description>数据库密码</description>
+	</property>
+	<property>
+		<name>octopus.common.db.name</name>
+		<value>octopus</value>
+		<description>数据库名称</description>
+	</property>
+	<property>
+		<name>octopus.common.db.driverClassName</name>
+		<value>com.mysql.jdbc.Driver</value>
+		<description>数据源驱动类</description>
+	</property>
+	<property>
+		<name>octopus.common.db.maxActive</name>
+		<value>20</value>
+		<description>dbcp 的 maxActive</description>
+	</property>
+	<property>
+		<name>octopus.common.db.maxIdle</name>
+		<value>10</value>
+		<description>dbcp 的 maxIdle</description>
+	</property>
+	<property>
+		<name>octopus.common.db.minIdle</name>
+		<value>10</value>
+		<description>dbcp 的 minIdle</description>
+	</property>
+	<property>
+		<name>octopus.common.db.maxWait</name>
+		<value>5</value>
+		<description>dbcp 的 maxWait</description>
+	</property>
+	<property>
+		<name>octopus.common.db.removeAbandoned</name>
+		<value>true</value>
+		<description>dbcp 的 removeAbandoned</description>
+	</property>
+	<property>
+		<name>octopus.common.db.removeAbandonedTimeout</name>
+		<value>60</value>
+		<description>dbcp 的 removeAbandonedTimeout</description>
+	</property>
+	<property>
+		<name>octopus.common.db.testOnBorrow</name>
+		<value>true</value>
+		<description>dbcp 的 testOnBorrow</description>
+	</property>
+	<property>
+		<name>octopus.common.db.testOnReturn</name>
+		<value>true</value>
+		<description>dbcp 的 testOnReturn</description>
+	</property>
+	<property>
+		<name>octopus.common.db.testWhileIdle</name>
+		<value>true</value>
+		<description>dbcp 的 testWhileIdle</description>
+	</property>
+	<property>
+		<name>octopus.common.db.validationQuery</name>
+		<value>SELECT 1 FROM DUAL</value>
+		<description>dbcp 的 validationQuery</description>
+	</property>
+	
 </Configuration>
