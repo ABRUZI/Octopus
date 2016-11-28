@@ -6,8 +6,14 @@
 		<description>slaver 本地命令行端口</description>
 	</property>	
 	<property>
-		<name>octopus.slaver.userlib.path</name>
-		<value>E:/temp/jars</value>
-		<description>用户jar包存放的位置，包括用户自己的代码打的jar和这些jar依赖的jar</description>
+		<name>octopus.slaver.parallel.number</name>
+		<value>50</value>
+		<description>Slaver可以并行执行的Flow的个数</description>
 	</property>
+	<property>
+		<name>octopus.slaver.shellfile.dir</name>
+		<value>/tmp/octopus/shell</value>
+		<description>Slaver运行时保存Shell脚本文件的目录</description>
+	</property>
+	
 </Configuration>
